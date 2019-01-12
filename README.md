@@ -4,6 +4,10 @@
 [![License](https://img.shields.io/cocoapods/l/AlamofireEasyLogger.svg?style=flat)](https://cocoapods.org/pods/AlamofireEasyLogger)
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireEasyLogger.svg?style=flat)](https://cocoapods.org/pods/AlamofireEasyLogger)
 
+*AlamofireEasyLogger* is an easy drop-in Alamofire request & response logger. No configuration is needed, it just works.
+
+It works for all requests and responses. There is no need to call a function on every request. It provides a full request/response logger out of the box and allows for easy overriding in case you have different requirements for what you want to see.
+
 ## Requirements
 
 - iOS 9.0+
