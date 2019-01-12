@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (4.8.0)
+  - AlamofireEasyLogger (1.0.0):
+    - Alamofire (>= 4.0)
+
+DEPENDENCIES:
+  - AlamofireEasyLogger (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  AlamofireEasyLogger:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  AlamofireEasyLogger: d46e01d45d58a742aa8e1b6f3082d91b52ef4148
+
+PODFILE CHECKSUM: 556b14ac6e0a87bc997b0b6da384162ceb957715
+
+COCOAPODS: 1.5.3

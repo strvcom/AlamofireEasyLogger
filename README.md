@@ -20,9 +20,96 @@ it, simply add the following line to your Podfile:
 pod 'AlamofireEasyLogger'
 ```
 
+## Usage
+
+Out of the box AlamofireEasyLogger provides the `FancyAppAlamofireLogger` class that logs request and responses with their parameters, headers and bodies as in the example below.
+
+This works for both successful and unsuccessful requests/responses and the output is nicely formatted.
+
+### FancyAppAlamofireLogger log example
+```
+🚀🚀🚀 REQUEST 🚀🚀🚀
+🔈 GET https://api.openweathermap.org/data/2.5/forecast?lat=-26.2041028&lon=28.0473051&APPID=hidden&units=metric
+🚀🚀🚀 REQUEST 🚀🚀🚀
+
+✅✅✅ SUCCESS RESPONSE ✅✅✅
+🔈 GET https://api.openweathermap.org/data/2.5/weather?lat=-26.2041028&lon=28.0473051&APPID=hidden&units=metric
+🔈 Status code: 200
+💡 Access-Control-Allow-Methods: GET, POST
+💡 X-Cache-Key: /data/2.5/weather?APPID=hidden&lat=-26.2&lon=28.05&units=metric
+💡 Server: openresty
+💡 Content-Length: 441
+💡 Date: Sat, 12 Jan 2019 16:30:50 GMT
+💡 Content-Type: application/json; charset=utf-8
+💡 Access-Control-Allow-Origin: *
+💡 Access-Control-Allow-Credentials: true
+💡 Connection: keep-alive
+{"coord":{"lon":28.05,"lat":-26.2},"weather":[{"id":500,"main":"Rain","description":"light rain","icon":"10d"}],"base":"stations","main":{"temp":29.53,"pressure":1015,"humidity":37,"temp_min":29,"temp_max":30},"wind":{"speed":0.5,"deg":310},"rain":{"3h":0.575},"clouds":{"all":32},"dt":1547308800,"sys":{"type":1,"id":1958,"message":0.0103,"country":"ZA","sunrise":1547263628,"sunset":1547312706},"id":993800,"name":"Johannesburg","cod":200}
+✅✅✅ SUCCESS RESPONSE ✅✅✅
+```
+
+### Usage in app
+
+You need to hold a reference to your logger instance. The place to do this might be your `AppDelegate` or any other place where the reference will stay alive.
+
+```
+import UIKit
+import AlamofireEasyLogger
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate {
+
+    var window: UIWindow?
+    
+    let alamofireLogger = FancyAppAlamofireLogger(
+        logFunction: {
+            print($0)
+        }
+    )
+    
+    ...
+}
+```
+
+As you can see above the only parameter the logger takes during initialization is `logFunction` closure defined as `public typealias LogFunction = (String) -> Void`.
+This function is responsible for logging the requests and responses.
+You can use a simple `print` as in the example above or integrate a logging library of your choice.
+
+### Implementing your own logger
+
+If the `FancyAppAlamofireLogger` is too verbose for your taste or you want to implement a completely custom logger you can use the `AlamofireLoggerDelegate` of `AlamofireEasyLogger`.
+
+Your logger should be used exactly like the `FancyAppAlamofireLogger` in the example above and should look similar to following piece of code.
+
+```
+class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
+    
+    let alamofireLogger = AlamofireLogger()
+    
+    public init() {
+        alamofireLogger.delegate = self
+        alamofireLogger.startLogging()
+    }
+    
+    open func networkRequestDidStart(request: AlamofireLoggerRequest) {
+        ...
+    }
+    
+    open func networkRequestDidComplete(request: AlamofireLoggerRequest, result: AlamofireLoggerResult) {
+        ...
+    }
+    
+    open func loggingFailed(error: AlamofireLoggingError) {
+        ...
+    }
+}
+```
+
+As you can see on this example `AlamofireEasyLogger` is quite versatile and with the use of `AlamofireLoggerDelegate` you're able to develop a completely custom logger while leveraging the `AlamofireLoggerRequest`, `AlamofireLoggerResult` and `AlamofireLoggingError` entities provided to you.
+
 ## Author
 
-jankaltoun, jkaltoun@legalzoom.com
+Jan Kaltoun, jan.kaltoun@me.com
 
 ## License
 

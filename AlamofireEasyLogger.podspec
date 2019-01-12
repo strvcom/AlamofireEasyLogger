@@ -8,8 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlamofireEasyLogger'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of AlamofireEasyLogger.'
+  s.version          = '1.0.0'
+  s.summary          = 'Easy drop-in Alamofire request & response logger.'
+  s.swift_version    = '4.2'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
@@ -18,25 +19,20 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+Easy drop-in Alamofire request & response logger.
+No configuration is needed, it just works.
+Works for all requests and responses. There is no need to call a function on every request.
+Provides a full request/response logger out of the box and allows for easy overriding in case you have different requirements for what you want to see.
                        DESC
 
   s.homepage         = 'https://github.com/jankaltoun/AlamofireEasyLogger'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'jankaltoun' => 'jkaltoun@legalzoom.com' }
+  s.author           = { 'jankaltoun' => 'jan.kaltoun@me.com' }
   s.source           = { :git => 'https://github.com/jankaltoun/AlamofireEasyLogger.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'
 
   s.source_files = 'AlamofireEasyLogger/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'AlamofireEasyLogger' => ['AlamofireEasyLogger/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.dependency 'Alamofire', '>= 4.0'
 end
