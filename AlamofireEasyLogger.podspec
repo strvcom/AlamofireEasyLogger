@@ -8,9 +8,9 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlamofireEasyLogger'
-  s.version          = '1.0.0'
+  s.version          = '1.1.0'
   s.summary          = 'Easy drop-in Alamofire request & response logger.'
-  s.swift_version    = '4.2'
+  s.swift_version    = '5.0'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?

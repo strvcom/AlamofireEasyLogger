@@ -11,8 +11,10 @@ It works for all requests and responses. There is no need to call a function on 
 ## Requirements
 
 - iOS 9.0+
-- Xcode 10.0+
-- Swift 4.2+
+- Xcode 10.2+
+- Swift 5.0+
+
+**For Swift 4.2 please use pod version 1.0.0.**
 
 ## Dependencies
 
