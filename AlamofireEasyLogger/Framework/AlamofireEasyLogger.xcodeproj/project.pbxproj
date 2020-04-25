@@ -16,23 +16,8 @@
 		0181854324547EAF00FF17BC /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853824547EAE00FF17BC /* AlamofireLogger.swift */; };
 		0181854424547EAF00FF17BC /* FancyAppAlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853A24547EAE00FF17BC /* FancyAppAlamofireLogger.swift */; };
 		0181854624547EAF00FF17BC /* AlamofireEasyLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 0181853C24547EAF00FF17BC /* AlamofireEasyLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0181855C24548EB600FF17BC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181855A24548D4F00FF17BC /* Alamofire.framework */; };
-		0181855D24548EB600FF17BC /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0181855A24548D4F00FF17BC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0181857524549D2400FF17BC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181857424549D2400FF17BC /* Alamofire.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		0181855E24548EB600FF17BC /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				0181855D24548EB600FF17BC /* Alamofire.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		018184D72454761600FF17BC /* AlamofireEasyLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireEasyLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,7 +33,7 @@
 		0181853C24547EAF00FF17BC /* AlamofireEasyLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlamofireEasyLogger.h; sourceTree = "<group>"; };
 		0181854824547F9C00FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0181854D245483F700FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0181855A24548D4F00FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		0181857424549D2400FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0181855C24548EB600FF17BC /* Alamofire.framework in Frameworks */,
+				0181857524549D2400FF17BC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,7 +51,6 @@
 		018184CD2454761600FF17BC = {
 			isa = PBXGroup;
 			children = (
-				0181855A24548D4F00FF17BC /* Alamofire.framework */,
 				018184F824547B5400FF17BC /* AlamofireEasyLogger */,
 				018184D82454761600FF17BC /* Products */,
 				0181854724547F9C00FF17BC /* Frameworks */,
@@ -125,6 +109,7 @@
 		0181854724547F9C00FF17BC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0181857424549D2400FF17BC /* Alamofire.framework */,
 				0181854D245483F700FF17BC /* Alamofire.framework */,
 				0181854824547F9C00FF17BC /* Alamofire.framework */,
 			);
@@ -153,7 +138,6 @@
 				018184D32454761600FF17BC /* Sources */,
 				018184D42454761600FF17BC /* Frameworks */,
 				018184D52454761600FF17BC /* Resources */,
-				0181855E24548EB600FF17BC /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -354,7 +338,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/AlamofireEasyLogger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -380,7 +364,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/Carthage/Build/iOS";
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = "$(SRCROOT)/AlamofireEasyLogger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
