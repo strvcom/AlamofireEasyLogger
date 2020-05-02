@@ -76,7 +76,7 @@ public class AlamofireLogger {
         }
         
         guard
-            let response = request.response as? HTTPURLResponse,
+            let response = request.response,
             let responseHeaders = response.allHeaderFields as? [String: String]
         else {
             delegate?.loggingFailed(error: .responseParsingFailed)
