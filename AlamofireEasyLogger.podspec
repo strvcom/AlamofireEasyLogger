@@ -30,7 +30,7 @@ Provides a full request/response logger out of the box and allows for easy overr
   s.author           = { 'jankaltoun' => 'jan.kaltoun@me.com' }
   s.source           = { :git => 'https://github.com/jankaltoun/AlamofireEasyLogger.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
   s.source_files = 'AlamofireEasyLogger/Classes/**/*'
   
