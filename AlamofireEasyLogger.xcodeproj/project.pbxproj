@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		01662177245EAB2D00C3C317 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01662172245EAA7000C3C317 /* Alamofire.framework */; };
 		0181853D24547EAF00FF17BC /* AlamofireLoggerResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853224547EAE00FF17BC /* AlamofireLoggerResult.swift */; };
 		0181853E24547EAF00FF17BC /* URLRequest+AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853324547EAE00FF17BC /* URLRequest+AlamofireLogger.swift */; };
 		0181853F24547EAF00FF17BC /* AlamofireLoggerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853424547EAE00FF17BC /* AlamofireLoggerResponse.swift */; };
@@ -16,11 +17,10 @@
 		0181854324547EAF00FF17BC /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853824547EAE00FF17BC /* AlamofireLogger.swift */; };
 		0181854424547EAF00FF17BC /* FancyAppAlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853A24547EAE00FF17BC /* FancyAppAlamofireLogger.swift */; };
 		0181854624547EAF00FF17BC /* AlamofireEasyLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 0181853C24547EAF00FF17BC /* AlamofireEasyLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0181857524549D2400FF17BC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0181857424549D2400FF17BC /* Alamofire.framework */; };
-		7ACA71C42C14775A3B6AA095 /* Pods_AlamofireEasyLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DECCBABAD507B92358EF5994 /* Pods_AlamofireEasyLogger.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		01662172245EAA7000C3C317 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		018184D72454761600FF17BC /* AlamofireEasyLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AlamofireEasyLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0181853224547EAE00FF17BC /* AlamofireLoggerResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireLoggerResult.swift; sourceTree = "<group>"; };
 		0181853324547EAE00FF17BC /* URLRequest+AlamofireLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URLRequest+AlamofireLogger.swift"; sourceTree = "<group>"; };
@@ -35,9 +35,6 @@
 		0181854824547F9C00FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0181854D245483F700FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0181857424549D2400FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
-		6FD47396C973AA1256C14219 /* Pods-AlamofireEasyLogger.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireEasyLogger.debug.xcconfig"; path = "Target Support Files/Pods-AlamofireEasyLogger/Pods-AlamofireEasyLogger.debug.xcconfig"; sourceTree = "<group>"; };
-		ADC67B364A9138322C06E2A7 /* Pods-AlamofireEasyLogger.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AlamofireEasyLogger.release.xcconfig"; path = "Target Support Files/Pods-AlamofireEasyLogger/Pods-AlamofireEasyLogger.release.xcconfig"; sourceTree = "<group>"; };
-		DECCBABAD507B92358EF5994 /* Pods_AlamofireEasyLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AlamofireEasyLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,8 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0181857524549D2400FF17BC /* Alamofire.framework in Frameworks */,
-				7ACA71C42C14775A3B6AA095 /* Pods_AlamofireEasyLogger.framework in Frameworks */,
+				01662177245EAB2D00C3C317 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +114,7 @@
 				0181857424549D2400FF17BC /* Alamofire.framework */,
 				0181854D245483F700FF17BC /* Alamofire.framework */,
 				0181854824547F9C00FF17BC /* Alamofire.framework */,
-				DECCBABAD507B92358EF5994 /* Pods_AlamofireEasyLogger.framework */,
+				01662172245EAA7000C3C317 /* Alamofire.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -126,8 +122,6 @@
 		6FB9C7E9CF4AE582247D0F1D /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				6FD47396C973AA1256C14219 /* Pods-AlamofireEasyLogger.debug.xcconfig */,
-				ADC67B364A9138322C06E2A7 /* Pods-AlamofireEasyLogger.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -150,7 +144,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 018184DF2454761600FF17BC /* Build configuration list for PBXNativeTarget "AlamofireEasyLogger" */;
 			buildPhases = (
-				7ABA4ED6346A588663CF7EA9 /* [CP] Check Pods Manifest.lock */,
 				018184D22454761600FF17BC /* Headers */,
 				018184D32454761600FF17BC /* Sources */,
 				018184D42454761600FF17BC /* Frameworks */,
@@ -206,31 +199,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		7ABA4ED6346A588663CF7EA9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-AlamofireEasyLogger-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		018184D32454761600FF17BC /* Sources */ = {
@@ -373,7 +341,6 @@
 		};
 		018184E02454761600FF17BC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6FD47396C973AA1256C14219 /* Pods-AlamofireEasyLogger.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -384,7 +351,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Carthage/Build/iOS,
-					../../Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AlamofireEasyLogger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -404,7 +371,6 @@
 		};
 		018184E12454761600FF17BC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = ADC67B364A9138322C06E2A7 /* Pods-AlamofireEasyLogger.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -415,7 +381,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Carthage/Build/iOS,
-					../../Build/iOS,
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/AlamofireEasyLogger/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
