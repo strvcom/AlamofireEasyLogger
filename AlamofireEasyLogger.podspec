@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlamofireEasyLogger'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'Easy drop-in Alamofire request & response logger.'
   s.swift_version    = '5.0'
 
@@ -34,5 +34,5 @@ Provides a full request/response logger out of the box and allows for easy overr
 
   s.source_files = 'AlamofireEasyLogger/Classes/**/*'
   
-  s.dependency 'Alamofire', '>= 4.6'
+  s.dependency 'Alamofire', '>= 5.0'
 end

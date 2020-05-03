@@ -10,15 +10,15 @@ It works for all requests and responses. There is no need to call a function on 
 
 ## Requirements
 
-- iOS 9.0+
-- Xcode 10.2+
+- iOS 10.0+
 - Swift 5.0+
 
 **For Swift 4.2 please use pod version 1.0.0.**
+**For Alamofire 4.6 please use pod version 1.1.0.**
 
 ## Dependencies
 
-- [Alamofire 4.6+](https://github.com/Alamofire/Alamofire)
+- [Alamofire 5+](https://github.com/Alamofire/Alamofire)
 
 ## Installation
 

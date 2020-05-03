@@ -1,0 +1,23 @@
+PODS:
+  - Alamofire (5.0.5)
+  - AlamofireEasyLogger (1.2.0):
+    - Alamofire (>= 5.0)
+
+DEPENDENCIES:
+  - AlamofireEasyLogger (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  AlamofireEasyLogger:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
+  AlamofireEasyLogger: 6c41b4ba7594577ded521be22d80f8efdf8c0198
+
+PODFILE CHECKSUM: 602735ea8c69c6ecda6a847e3ce44511539434cf
+
+COCOAPODS: 1.9.1

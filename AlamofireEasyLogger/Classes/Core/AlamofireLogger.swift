@@ -19,23 +19,28 @@ public class AlamofireLogger {
         notificationCenter.addObserver(
             self,
             selector: #selector(AlamofireLogger.networkRequestDidStart(notification:)),
-            name: Notification.Name.Task.DidResume,
+            name: Request.didResumeTaskNotification,
             object: nil
         )
         
         notificationCenter.addObserver(
             self,
             selector: #selector(AlamofireLogger.networkRequestDidComplete(notification:)),
-            name: Notification.Name.Task.DidComplete,
+            name: Request.didCompleteTaskNotification,
             object: nil
         )
     }
     
     @objc private func networkRequestDidStart(notification: Notification) {
         guard
-            let task = notification.userInfo?[Notification.Key.Task] as? URLSessionTask,
-            let loggerRequest = task.originalRequest?.alamofireLoggerRequest
+            let request = notification.request
         else {
+            delegate?.loggingFailed(error: .responseParsingFailed)
+            
+            return
+        }
+        
+        guard let loggerRequest = request.request?.alamofireLoggerRequest else {
             delegate?.loggingFailed(error: .requestParsingFailed)
             
             return
@@ -48,21 +53,20 @@ public class AlamofireLogger {
     
     @objc private func networkRequestDidComplete(notification: Notification) {
         guard
-            let sessionDelegate = notification.object as? SessionDelegate,
-            let task = notification.userInfo?[Notification.Key.Task] as? URLSessionTask
+            let request = notification.request
         else {
             delegate?.loggingFailed(error: .responseParsingFailed)
             
             return
         }
         
-        guard let loggerRequest = task.originalRequest?.alamofireLoggerRequest else {
+        guard let loggerRequest = request.request?.alamofireLoggerRequest else {
             delegate?.loggingFailed(error: .requestParsingFailed)
             
             return
         }
         
-        if let error = task.error {
+        if let error = request.error {
             delegate?.networkRequestDidComplete(
                 request: loggerRequest,
                 result: .failure(error)
@@ -72,7 +76,7 @@ public class AlamofireLogger {
         }
         
         guard
-            let response = task.response as? HTTPURLResponse,
+            let response = request.response,
             let responseHeaders = response.allHeaderFields as? [String: String]
         else {
             delegate?.loggingFailed(error: .responseParsingFailed)
@@ -82,7 +86,7 @@ public class AlamofireLogger {
         
         var body: String?
         
-        if let httpBody = sessionDelegate[task]?.delegate.data {
+        if let httpBody = request.request?.httpBody {
             body = String(data: httpBody, encoding: .utf8)
         }
         
