@@ -4,7 +4,7 @@ PODS:
     - Alamofire (>= 4.6)
 
 DEPENDENCIES:
-  - AlamofireEasyLogger (from `../`)
+  - AlamofireEasyLogger (from `./`)
 
 SPEC REPOS:
   trunk:
@@ -12,12 +12,12 @@ SPEC REPOS:
 
 EXTERNAL SOURCES:
   AlamofireEasyLogger:
-    :path: "../"
+    :path: "./"
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireEasyLogger: 626df3a6255e30869dc08fc3b497f5e45c51b7d8
 
-PODFILE CHECKSUM: 5700be7d409001e7ef9ac19e57f5d811b819cbcd
+PODFILE CHECKSUM: d12ba139573e69088f024e5e0c4dd448edfe0c1d
 
 COCOAPODS: 1.9.1

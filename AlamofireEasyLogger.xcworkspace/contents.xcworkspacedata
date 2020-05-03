@@ -2,10 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Example/AlamofireEasyLogger.xcodeproj">
-   </FileRef>
-   <FileRef
-      location = "group:Framework/AlamofireEasyLogger.xcodeproj">
+      location = "group:AlamofireEasyLogger.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">
