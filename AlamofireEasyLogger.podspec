@@ -32,7 +32,7 @@ Provides a full request/response logger out of the box and allows for easy overr
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = './AlamofireEasyLogger/Classes/**/*'
+  s.source_files = 'AlamofireEasyLogger/Classes/**/*'
   
   s.dependency 'Alamofire', '>= 4.6'
 end
