@@ -122,4 +122,6 @@ Jan Kaltoun, jan.kaltoun@me.com
 
 ## License
 
-AlamofireEasyLogger is available under the MIT license. See the LICENSE file for more info.
+Please do whatever you want with this code.
+
+If you link to this repository or mention me as the author, it will make me happy!
