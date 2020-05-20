@@ -22,11 +22,20 @@ It works for all requests and responses. There is no need to call a function on 
 
 ## Installation
 
-AlamofireEasyLogger is available through [CocoaPods](https://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+### Cocoapods
+
+To install this library using Cocoapods, simply add the following line to your Podfile
 
 ```ruby
 pod 'AlamofireEasyLogger'
+```
+
+### Carthage
+
+To integrate this library using Carthage, add the following line to your Cartfile.
+
+```ruby
+github "jankaltoun/AlamofireEasyLogger"
 ```
 
 ## Usage
