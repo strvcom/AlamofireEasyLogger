@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AlamofireEasyLogger'
-  s.version          = '1.3.0'
+  s.version          = '1.4.0'
   s.summary          = 'Easy drop-in Alamofire request & response logger.'
   s.swift_version    = '5.0'
 
