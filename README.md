@@ -22,6 +22,14 @@ It works for all requests and responses. There is no need to call a function on 
 
 ## Installation
 
+### Swift Package Manager
+
+Simply add URL of this repository into your package dependencies:
+
+```
+https://github.com/jankaltoun/AlamofireEasyLogger
+```
+
 ### Cocoapods
 
 To install this library using Cocoapods, simply add the following line to your Podfile
