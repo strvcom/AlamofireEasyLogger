@@ -55,7 +55,7 @@ public class AlamofireLogger {
     
     @objc private func networkRequestDidComplete(notification: Notification) {
         guard
-            let request = notification.request
+            let request = notification.request as? DataRequest
         else {
             delegate?.loggingFailed(error: .responseParsingFailed)
             
@@ -88,8 +88,8 @@ public class AlamofireLogger {
         
         var body: String?
         
-        if let httpBody = request.request?.httpBody {
-            body = String(data: httpBody, encoding: .utf8)
+        if let responseData = request.data {
+            body = String(data: responseData, encoding: .utf8)
         }
         
         delegate?.networkRequestDidComplete(
