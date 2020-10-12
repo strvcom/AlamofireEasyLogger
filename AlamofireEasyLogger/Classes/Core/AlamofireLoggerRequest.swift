@@ -10,9 +10,9 @@ import Foundation
 
 public struct AlamofireLoggerRequest {
     
-    let urlRequest: URLRequest
-    let method: String
-    let url: URL
-    let headers: [String: String]?
-    let body: String?
+    public let urlRequest: URLRequest
+    public let method: String
+    public let url: URL
+    public let headers: [String: String]?
+    public let body: String?
 }

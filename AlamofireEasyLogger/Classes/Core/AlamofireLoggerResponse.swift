@@ -10,8 +10,8 @@ import Foundation
 
 public struct AlamofireLoggerResponse {
     
-    let httpURLResponse: HTTPURLResponse
-    let statusCode: Int
-    let headers: [String: String]
-    let body: String?
+    public let httpURLResponse: HTTPURLResponse
+    public let statusCode: Int
+    public let headers: [String: String]
+    public let body: String?
 }
