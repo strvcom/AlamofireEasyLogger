@@ -33,7 +33,12 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
             .forEach { message.append($0) }
         
         if let body = request.body {
-            message.append(body)
+            if let prettyPrintedBody = body.data(using: .utf8)?.prettyPrintedJSONString {
+                message.append(prettyPrintedBody)
+            }
+            else {
+                message.append(body)
+            }
         }
         
         message.append(divider)
@@ -67,7 +72,12 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
                 .forEach { message.append($0) }
             
             if let body = response.body {
-                message.append(body)
+                if let prettyPrintedBody = body.data(using: .utf8)?.prettyPrintedJSONString {
+                    message.append(prettyPrintedBody)
+                }
+                else {
+                    message.append(body)
+                }
             }
             
             message.append(divider)
