@@ -28,9 +28,9 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     open func networkRequestDidStart(request: AlamofireLoggerRequest) {
         var message = [String]()
         
-        let divider = emojionalText("REQUEST", symbol: "🚀")
-        
-        message.append(divider)
+        message.append(
+            emojionalText("REQUEST", symbol: "🚀")
+        )
         message.append("🔈 \(request.method) \(request.url.absoluteString)")
         
         request.headers?
@@ -43,7 +43,9 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
             message.append(body)
         }
         
-        message.append(divider)
+        message.append(
+            emojionalText("END REQUEST", symbol: "🔼")
+        )
         
         logFunction(message.joined(separator: "\n"))
     }
@@ -52,20 +54,24 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
         var message = [String]()
         
         if case let .failure(error) = result {
-            let divider = emojionalText("REQUEST ERROR", symbol: "🛑")
-            
-            message.append(divider)
+            message.append(
+                emojionalText("REQUEST ERROR", symbol: "🛑")
+            )
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
             message.append("\(error)")
-            message.append(divider)
+            message.append(
+                emojionalText("END REQUEST ERROR", symbol: "🔼")
+            )
         }
         
         if case let .success(response) = result {
-            let divider = 200...299 ~= response.statusCode ?
-                emojionalText("SUCCESS RESPONSE", symbol: "✅") :
-                emojionalText("ERROR RESPONSE", symbol: "❌")
+            let requestSuccessful = 200...299 ~= response.statusCode
             
-            message.append(divider)
+            message.append(
+                requestSuccessful ?
+                    emojionalText("SUCCESS RESPONSE", symbol: "✅") :
+                    emojionalText("ERROR RESPONSE", symbol: "❌")
+            )
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
             message.append("🔈 Status code: \(response.statusCode)")
             
@@ -79,7 +85,12 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
                 message.append(body)
             }
             
-            message.append(divider)
+            message.append(
+                emojionalText(
+                    requestSuccessful ? "END SUCCESS RESPONSE" : "END ERROR RESPONSE",
+                    symbol: "🔼"
+                )
+            )
         }
         
         logFunction(message.joined(separator: "\n"))
