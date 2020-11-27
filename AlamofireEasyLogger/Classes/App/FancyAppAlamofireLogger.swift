@@ -12,9 +12,11 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     
     let alamofireLogger = AlamofireLogger()
     let logFunction: LogFunction
+    let emojiLevel: Int
     
-    public init(logFunction: @escaping LogFunction) {
+    public init(logFunction: @escaping LogFunction, emojiLevel: Int = 3) {
         self.logFunction = logFunction
+        self.emojiLevel = emojiLevel
         
         alamofireLogger.delegate = self
         alamofireLogger.startLogging()
@@ -23,7 +25,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     open func networkRequestDidStart(request: AlamofireLoggerRequest) {
         var message = [String]()
         
-        let divider = "🚀🚀🚀 REQUEST 🚀🚀🚀"
+        let divider = "\(emoji("🚀")) REQUEST \(emoji("🚀"))"
         
         message.append(divider)
         message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -45,7 +47,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
         var message = [String]()
         
         if case let .failure(error) = result {
-            let divider = "🛑🛑🛑 REQUEST ERROR 🛑🛑🛑"
+            let divider = "\(emoji("🛑")) REQUEST ERROR \(emoji("🛑"))"
             
             message.append(divider)
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -55,8 +57,8 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
         
         if case let .success(response) = result {
             let divider = 200...299 ~= response.statusCode ?
-                "✅✅✅ SUCCESS RESPONSE ✅✅✅" :
-                "❌❌❌ ERROR RESPONSE ❌❌❌"
+                "\(emoji("✅")) SUCCESS RESPONSE \(emoji("✅"))" :
+                "\(emoji("❌")) ERROR RESPONSE \(emoji("❌"))"
             
             message.append(divider)
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -78,5 +80,11 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     
     open func loggingFailed(error: AlamofireLoggingError) {
         logFunction("\(error)")
+    }
+}
+
+extension FancyAppAlamofireLogger {
+    func emoji(_ symbol: String) -> String {
+        [String](count: emojiLevel, repeatedValue: symbol).reduce("", combine: +)
     }
 }
