@@ -25,7 +25,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     open func networkRequestDidStart(request: AlamofireLoggerRequest) {
         var message = [String]()
         
-        let divider = "\(emoji("🚀")) REQUEST \(emoji("🚀"))"
+        let divider = emojionalText("REQUEST", symbol: "🚀")
         
         message.append(divider)
         message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -47,7 +47,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
         var message = [String]()
         
         if case let .failure(error) = result {
-            let divider = "\(emoji("🛑")) REQUEST ERROR \(emoji("🛑"))"
+            let divider = emojionalText("REQUEST ERROR", symbol: "🛑")
             
             message.append(divider)
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -57,8 +57,8 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
         
         if case let .success(response) = result {
             let divider = 200...299 ~= response.statusCode ?
-                "\(emoji("✅")) SUCCESS RESPONSE \(emoji("✅"))" :
-                "\(emoji("❌")) ERROR RESPONSE \(emoji("❌"))"
+                emojionalText("SUCCESS RESPONSE", symbol: "✅") :
+                emojionalText("ERROR RESPONSE", symbol: "❌")
             
             message.append(divider)
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -86,5 +86,9 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
 private extension FancyAppAlamofireLogger {
     func emoji(_ symbol: String) -> String {
         [String](count: emojiLevel, repeatedValue: symbol).reduce("", combine: +)
+    }
+    
+    func emojionalText(_ text: String, symbol: String) -> String {
+        "\(emoji(symbol)) \(text) \(emoji(symbol))"
     }
 }
