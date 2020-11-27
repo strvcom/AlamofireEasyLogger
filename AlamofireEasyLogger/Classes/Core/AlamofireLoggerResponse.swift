@@ -13,5 +13,7 @@ public struct AlamofireLoggerResponse {
     public let httpURLResponse: HTTPURLResponse
     public let statusCode: Int
     public let headers: [String: String]
-    public let body: String?
+    public let bodyData: Data?
 }
+
+extension AlamofireLoggerResponse: BodyStringRepresentable {}

@@ -14,5 +14,7 @@ public struct AlamofireLoggerRequest {
     public let method: String
     public let url: URL
     public let headers: [String: String]?
-    public let body: String?
+    public let bodyData: Data?
 }
+
+extension AlamofireLoggerRequest: BodyStringRepresentable {}
