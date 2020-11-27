@@ -12,11 +12,11 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     
     let alamofireLogger = AlamofireLogger()
     let logFunction: LogFunction
-    let emojiLevel: Int
+    let emojiCount: Int
     
-    public init(logFunction: @escaping LogFunction, emojiLevel: Int = 3) {
+    public init(logFunction: @escaping LogFunction, emojiCount: Int = 3) {
         self.logFunction = logFunction
-        self.emojiLevel = emojiLevel
+        self.emojiCount = emojiCount
         
         alamofireLogger.delegate = self
         alamofireLogger.startLogging()
@@ -85,7 +85,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
 
 private extension FancyAppAlamofireLogger {
     func emoji(_ symbol: String) -> String {
-        [String].init(repeating: symbol, count: emojiLevel).reduce("", +)
+        [String].init(repeating: symbol, count: emojiCount).reduce("", +)
     }
     
     func emojionalText(_ text: String, symbol: String) -> String {
