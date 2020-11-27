@@ -26,7 +26,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     open func networkRequestDidStart(request: AlamofireLoggerRequest) {
         var message = [String]()
         
-        let divider = "🚀 REQUEST 🚀"
+        let divider = "🚀🚀🚀 REQUEST 🚀🚀🚀"
         
         message.append(divider)
         message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -50,7 +50,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
         var message = [String]()
         
         if case let .failure(error) = result {
-            let divider = "🛑 REQUEST ERROR 🛑"
+            let divider = "🛑🛑🛑 REQUEST ERROR 🛑🛑🛑"
             
             message.append(divider)
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
@@ -60,8 +60,8 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
         
         if case let .success(response) = result {
             let divider = 200...299 ~= response.statusCode ?
-                "✅ SUCCESS RESPONSE ✅" :
-                "❌ ERROR RESPONSE ❌"
+                "✅✅✅ SUCCESS RESPONSE ✅✅✅" :
+                "❌❌❌ ERROR RESPONSE ❌❌❌"
             
             message.append(divider)
             message.append("🔈 \(request.method) \(request.url.absoluteString)")
