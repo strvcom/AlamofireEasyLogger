@@ -1,6 +1,6 @@
 PODS:
   - Alamofire (5.1.0)
-  - AlamofireEasyLogger (1.4.0):
+  - AlamofireEasyLogger (1.5.1):
     - Alamofire (>= 5.0)
 
 DEPENDENCIES:
@@ -16,8 +16,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Alamofire: 9d5c5f602928e512395b30950c5984eca840093c
-  AlamofireEasyLogger: fa67d9063e16b1f20993f4d802226ca6e3d54f6b
+  AlamofireEasyLogger: 838104f223f3ef584b1927698c16dfbc545deb01
 
 PODFILE CHECKSUM: 602735ea8c69c6ecda6a847e3ce44511539434cf
 
-COCOAPODS: 1.9.1
+COCOAPODS: 1.10.0

@@ -17,6 +17,7 @@
 		0181854324547EAF00FF17BC /* AlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853824547EAE00FF17BC /* AlamofireLogger.swift */; };
 		0181854424547EAF00FF17BC /* FancyAppAlamofireLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0181853A24547EAE00FF17BC /* FancyAppAlamofireLogger.swift */; };
 		0181854624547EAF00FF17BC /* AlamofireEasyLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 0181853C24547EAF00FF17BC /* AlamofireEasyLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		2F58592E25710C96001B0B8C /* BodyStringRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58592D25710C96001B0B8C /* BodyStringRepresentable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		0181854824547F9C00FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0181854D245483F700FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0181857424549D2400FF17BC /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		2F58592D25710C96001B0B8C /* BodyStringRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BodyStringRepresentable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				0181853624547EAE00FF17BC /* AlamofireLoggerRequest.swift */,
 				0181853724547EAE00FF17BC /* AlamofireLoggingError.swift */,
 				0181853824547EAE00FF17BC /* AlamofireLogger.swift */,
+				2F58592D25710C96001B0B8C /* BodyStringRepresentable.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -211,6 +214,7 @@
 				0181853E24547EAF00FF17BC /* URLRequest+AlamofireLogger.swift in Sources */,
 				0181853D24547EAF00FF17BC /* AlamofireLoggerResult.swift in Sources */,
 				0181854224547EAF00FF17BC /* AlamofireLoggingError.swift in Sources */,
+				2F58592E25710C96001B0B8C /* BodyStringRepresentable.swift in Sources */,
 				0181854124547EAF00FF17BC /* AlamofireLoggerRequest.swift in Sources */,
 				0181854024547EAF00FF17BC /* AlamofireLoggerDelegate.swift in Sources */,
 			);

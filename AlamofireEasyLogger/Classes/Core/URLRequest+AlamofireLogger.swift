@@ -18,18 +18,12 @@ extension URLRequest {
             return nil
         }
         
-        var body: String?
-        
-        if let httpBody = httpBody {
-            body = String(data: httpBody, encoding: .utf8)
-        }
-        
         return AlamofireLoggerRequest(
             urlRequest: self,
             method: method,
             url: url,
             headers: allHTTPHeaderFields,
-            body: body
+            bodyData: httpBody
         )
     }
 }
