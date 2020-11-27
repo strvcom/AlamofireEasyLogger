@@ -85,7 +85,7 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
 
 private extension FancyAppAlamofireLogger {
     func emoji(_ symbol: String) -> String {
-        [String](count: emojiLevel, repeatedValue: symbol).reduce("", combine: +)
+        [String].init(repeating: symbol, count: emojiLevel).reduce("", +)
     }
     
     func emojionalText(_ text: String, symbol: String) -> String {
