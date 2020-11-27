@@ -87,11 +87,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
-    let alamofireLogger = FancyAppAlamofireLogger(
-        logFunction: {
-            print($0)
-        }
-    )
+    let alamofireLogger = FancyAppAlamofireLogger(prettyPrint: true) {
+        print($0)
+    }
     
     ...
 }
