@@ -11,9 +11,12 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
     public typealias LogFunction = (String) -> Void
     
     let alamofireLogger = AlamofireLogger()
+    
+    let prettyPrint: Bool
     let logFunction: LogFunction
     
-    public init(logFunction: @escaping LogFunction) {
+    public init(prettyPrint: Bool, logFunction: @escaping LogFunction) {
+        self.prettyPrint = prettyPrint
         self.logFunction = logFunction
         
         alamofireLogger.delegate = self
@@ -32,7 +35,9 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
             .map({ "💡 \($0): \($1)" })
             .forEach { message.append($0) }
         
-        if let body = request.body {
+        let body = prettyPrint ? request.prettyPrintedBody : request.body
+        
+        if let body = body {
             message.append(body)
         }
         
@@ -66,7 +71,9 @@ open class FancyAppAlamofireLogger: AlamofireLoggerDelegate {
                 .map({ "💡 \($0): \($1)" })
                 .forEach { message.append($0) }
             
-            if let body = response.body {
+            let body = prettyPrint ? response.prettyPrintedBody : response.body
+            
+            if let body = body {
                 message.append(body)
             }
             

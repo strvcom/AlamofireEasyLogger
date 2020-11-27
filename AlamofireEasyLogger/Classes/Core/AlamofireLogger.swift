@@ -86,12 +86,6 @@ public class AlamofireLogger {
             return
         }
         
-        var body: String?
-        
-        if let responseData = request.data {
-            body = String(data: responseData, encoding: .utf8)
-        }
-        
         delegate?.networkRequestDidComplete(
             request: loggerRequest,
             result: .success(
@@ -99,7 +93,7 @@ public class AlamofireLogger {
                     httpURLResponse: response,
                     statusCode: response.statusCode,
                     headers: responseHeaders,
-                    body: body
+                    bodyData: request.data
                 )
             )
         )
